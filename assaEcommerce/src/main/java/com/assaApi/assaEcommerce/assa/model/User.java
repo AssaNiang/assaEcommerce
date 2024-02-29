@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "user", uniqueConstraints = {
-        @UniqueConstraint(columnNames = { "username" }),
+//        @UniqueConstraint(columnNames = { "username" }),
         @UniqueConstraint(columnNames = { "email" })
 })
 public class User {
@@ -17,14 +17,13 @@ public class User {
     @Column(nullable = false)
     private String firstname;
     @Column(nullable = false)
-    private String username;
+    private String lastname;
     @Column(nullable = false)
     private String email;
     @Column(nullable = false)
     private String password;
     @Column(nullable = false)
-    private Integer number;
-
+    private String phone;
     @Column(name = "user_role")
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
